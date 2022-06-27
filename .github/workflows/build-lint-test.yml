@@ -32,11 +32,12 @@ jobs:
 
   build-test:
 
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         python-version: [3.8, 3.9]
+        os: [macOS-latest, windows-latest]
 
     steps:
     - uses: actions/checkout@v2
